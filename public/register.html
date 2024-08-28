@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-container">
+            <h1>Register</h1>
+            
+            <!-- Info Container für Validierungsliste -->
+            <div class="info-container">
+                <h2>Validation Checklist:</h2>
+                <ul>
+                    <li id="validUsername">Valid username</li>
+                    <li id="passwordMatch">Passwords match <i class="status-icon"></i></li>
+                    <li id="passwordLengthCheck">Password is between 5 and 20 characters <i class="status-icon"></i></li>
+                    <li id="passwordStrengthCheck">Password is strong enough <i class="status-icon"></i></li>
+                </ul>
+            </div>
+
+            <form id="registerForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" maxlength="21" required>
+                    <span id="passwordLength" class="password-length">0</span>
+                    <i id="togglePassword" class="fas fa-eye"></i>
+                </div>
+                
+                <label for="confirmPassword">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" maxlength="21" required>
+                    <span id="confirmPasswordLength" class="password-length">0</span>
+                </div>
+                
+                <div id="passwordStrengthContainer">
+                    <div id="passwordStrengthBar"></div>
+                    <span id="passwordStrengthText">Very Weak</span>
+                </div>
+                
+                <button type="submit">Register</button>
+                <div id="registerMessage"></div>
+            </form>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

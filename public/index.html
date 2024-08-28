@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome für Augen-Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" maxlength="45" required>
+                    <span id="passwordLength" class="password-length">0</span>
+                    <i id="togglePassword" class="fas fa-eye"></i>
+                </div>
+                <button type="submit">Login</button>
+                <button type="button" id="createAccount">Create Account</button>
+                <div id="message"></div>
+            </form>
+        </div>
+        <div class="settings-container">
+            <h2>Settings</h2>
+            <label for="showLength">
+                <input type="checkbox" id="showLength"> Show length of password
+            </label>
+            <label for="saveCookies">
+                <input type="checkbox" id="saveCookies"> Save password and username in cookies
+            </label>
+            <button id="deleteCookies">Delete password and user cookies</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

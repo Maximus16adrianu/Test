@@ -1,0 +1,231 @@
+/* Grundlegende Reset-Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container-Layout */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.register-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: zoomIn 0.8s ease-out;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Überschriften und Text */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Formular-Elemente */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Informations-Container */
+.info-container {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.info-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.info-container li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.status-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.fa-check {
+    color: #2ecc71;
+}
+
+.fa-xmark {
+    color: #e74c3c;
+}
+
+/* Passwort-Container und Stärkenbalken */
+.password-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.password-length {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: color 0.3s ease;
+}
+
+#togglePassword:hover {
+    color: #3498db;
+}
+
+#passwordStrengthContainer {
+    margin-top: 0.8rem;
+}
+
+#passwordStrengthBar {
+    height: 6px;
+    border-radius: 3px;
+    background: #ecf0f1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#passwordStrengthBar::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #e74c3c;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+#passwordStrengthText {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Registrierungsmeldung */
+#registerMessage {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #e74c3c;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#registerMessage.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation für Zoom-Effekt */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
